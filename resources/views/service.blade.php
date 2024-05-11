@@ -1,64 +1,80 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>HomePage</title>
+        <title>Portfolio-servizi</title>
+        
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        
         <link href="/css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div class="container px-4">
-                <a class="navbar-brand" href="{{route('homepage')}}">HomePage</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{{route('aboutme')}}">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('service')}}">Servizi</a></li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="header text-white">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">I nostri servizi</h1>
-                <div class="row ">
-                    <div class="col-12 col-md-6">
-                        <div>
-                            @foreach ($servizi as $element )
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{{route('homepage')}}">Homepage</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                           
+                            <li class="nav-item "><a class="nav-link" href="{{route('aboutme')}}">Aboutme</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{route('service')}}">I miei servizi</a></li>
                             
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body bgcard">
-                                  
-                                
-                                  <a href="{{route('detail',['service'=> $element['uri']])}}" class="card-link">{{$element['name']}}</a>
-                                 
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-
+                            
+                           
+                        </ul>
                     </div>
                 </div>
-                
-            </div>
-        </header>
-        <!-- About section-->
-       
+            </nav>
+            <!-- Header-->
+            <section class="py-5 bgimage">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder text-white">I nostri servizi</h1>
+                        <p class="lead fw-normal text-white mb-0">Dai uno sguardo alle opportunita'</p>
+                    </div>
+                    <div class="row gx-5">
+                        @foreach ($servizi as $element)
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-3 mb-3" src="{{$element['img']}}" alt="...">
+                                <a class="h3 fw-bolder text-decoration-none stretched-link text-white"
+                                href="{{ route('detail', ['service' => $element['uri']]) }}">
+                                {{ $element['name'] }}
+                            </a>  
+                            </div>
+                        </div>
+                            
+                        @endforeach
+                       
+                    </div>
+                </div>
+            </section>
+
+        </main>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2024</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="/js/scripts.js"></script>
     </body>
 </html>

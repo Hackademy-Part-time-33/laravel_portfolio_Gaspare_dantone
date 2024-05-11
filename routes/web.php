@@ -1,26 +1,12 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+Route::get('/',[PageController::class, 'homepage'] )->name('homepage');
 
-Route::get('/chi-sono', function () {
-    return view('aboutme');
-})->name('aboutme');
+Route::get('/chi-sono',[PageController::class, 'aboutme'] )->name('aboutme');
 
-Route::get('/servizi-offerti', function () {
-    $servizi = [
-        ['name' => 'Siti Web', 'uri' => 'siti-web'],
-        ['name' => 'Negozi Digitali', 'uri' => 'ecommerce'],
-        ['name' => 'Gestionali in Cloud', 'uri' => 'gestionali-cloud'],
-        ['name' => 'Marketing Digitale', 'uri' => 'marketing-digitale'],
-    ];
-    return view('service' , ['servizi' => $servizi]) ;
-})->name('service');
+Route::get('/servizi',[PageController::class, 'service'] )->name('service');
 
-Route::get('/dettaglio-servizi/{service}', function ($service) {
-    return view('detail', ['servizi' => $service]) ;
-})->name('detail');
-
+Route::get('/dettaglio-servizio/{service}',[PageController::class, 'detail'] )->name('detail');
