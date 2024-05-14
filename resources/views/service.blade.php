@@ -9,7 +9,8 @@
                     </div>
                     <div class="row gx-5">
                         @foreach ($servizi as $element)
-                            <x-card  :element="$element"   />
+                        <x-card  :element="$element"/>
+                       
                         @endforeach
                     </div>
                         

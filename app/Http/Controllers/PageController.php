@@ -68,10 +68,28 @@ class PageController extends Controller
             
         }
         abort(404);
-        
-
-
     }
+   
+
+    public function contact() {
+        return view('contact');
+    } 
+
+    public function send(Request $request) {
+    
+        $request->validate([
+            'fullname'=>'required',
+            'telefono'=>'required',
+            'email'=>'required',
+            'message'=>'required',
+
+
+
+        ]);
+    } 
+
+
+
 
 
 
