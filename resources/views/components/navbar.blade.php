@@ -6,8 +6,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                    
-                    <li class="nav-item"><a class="nav-link" href="{{route('aboutme')}}">Aboutme</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('service')}}">I miei servizi</a></li>
+                    <li class="nav-item"><a class="nav-link @if (request()->routeIs('aboutme')) active @endif" 
+                        href="{{route('aboutme')}}">Aboutme</a></li>
+                    <li class="nav-item"><a class="nav-link @if (request()->routeIs('service')) active @endif" href="{{route('service')}}">I miei servizi</a></li>
                     
                     
                    

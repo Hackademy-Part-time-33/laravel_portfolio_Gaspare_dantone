@@ -13,3 +13,5 @@ Route::get('/dettaglio-servizio/{service}',[PageController::class, 'detail'] )->
 
 route::get('/contatti',[PageController::class, 'contact'])->name('contact');
 route::post('/send',[PageController::class, 'send'])->name('send');
+
+Route::get('/grazie',[PageController::class, 'thankyou'] )->name('thankyou');

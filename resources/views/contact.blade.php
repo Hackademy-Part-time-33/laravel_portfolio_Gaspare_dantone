@@ -2,7 +2,7 @@
 
     <div class="container py-4">
 
-        <h1>Create Post</h1>
+        <h1>Contattaci</h1>
  
         @if ($errors->any())
          <div class="alert alert-danger">
@@ -19,23 +19,23 @@
             @csrf
          <div class="mb-3">
           <label class="form-label">Nome</label>
-          <input class="form-control" type="text" name="fullname" placeholder="Nome" />
+          <input class="form-control" type="text" value="{{old('fullname')}}" name="fullname" placeholder="Nome" />
          </div>
        
        
          <div class="mb-3">
           <label class="form-label">Telefono</label>
-          <input class="form-control" type="number" name="telefono" placeholder="Telefono" />
+          <input class="form-control" type="number" name="telefono" placeholder="Telefono"  value="{{old('telefono')}}"/>
          </div>
        
          <div class="mb-3">
           <label class="form-label">Email</label>
-          <input class="form-control" type="email" name="email" placeholder="Email" />
+          <input class="form-control" type="email" name="email" placeholder="Email" value="{{old('email')}}" />
          </div>
          
          <div class="mb-3">
           <label class="form-label" >Messaggio</label>
-          <textarea class="form-control" type="text" name="message" placeholder="Messaggio" style="height: 10rem;"></textarea>
+          <textarea class="form-control" type="text" name="message" placeholder="Messaggio" style="height: 10rem;">{{old('messagio')}} </textarea>
          </div>
        
         

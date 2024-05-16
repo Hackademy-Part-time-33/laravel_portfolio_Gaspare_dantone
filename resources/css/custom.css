@@ -5,3 +5,11 @@
     background-size: cover;
   }
   
+.grazie{
+  background-image: url(/public/media/grazie.jpg);
+  height: 100%;
+  width: 100%;
+  background-size:contain;
+  
+  
+}
